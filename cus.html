@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <style>
+    .name {
+        width: 100%;
+        height: 37px;
+        border-radius: 22px;
+        border: 2px solid blue;
+        margin-bottom: 20px;
+    }
+    
+    .logos {
+        width: 100%;
+        height: 60px;
+        margin-bottom: 20px;
+    }
+    
+    .buttons {
+        width: 100px;
+        height: 40px;
+        background-color: blue;
+        color: white;
+        margin-top: 20px;
+    }
+    
+    .info-box {
+        padding: 10px;
+        border-bottom: 1px solid #eee;
+    }
+    
+    .buttons {
+        width: 150px;
+        height: 40px;
+        background-color: #007bff;
+        color: white;
+        margin-bottom: 20px;
+        border-radius: 8px;
+        cursor: pointer;
+    }
+    
+    /* ---------------------------------------- Admin ---------------------------------------- */
+    
+    .hedmar {
+        margin-left: 13px;
+        margin-bottom: 30px;
+    }
+    
+    #accept {
+        background-color: green;
+        margin-bottom: 30px;
+        margin-top: 15px;
+        width: 100px;
+        height: 40px;
+    }</style>
+    <div class="body1">
+
+        <div class="container mt-4">
+
+            <div class="row">
+                <div class="col-md-4">
+                    <label for="name">Name:</label>
+                    <input type="text" id="name" class="name">
+                </div>
+                <div class="col-md-4">
+                    <label for="name">Mobile Number:</label>
+                    <input type="text" id="number" class="name">
+                </div>
+                <div class="col-md-4">
+                    <label for="name">Whatsapp Number:</label>
+                    <input type="text" id="wnumber" class="name">
+                </div>
+                <div class="col-md-4">
+                    <label for="name">Email:</label>
+                    <input type="text" id="email" class="name">
+                </div>
+                <div class="col-md-4">
+                    <label for="name">Company Name:</label>
+                    <input type="text" id="companyName" class="name">
+                </div>
+                <div class="col-md-4">
+                    <label for="name">GST Number:</label>
+                    <input type="text" id="GstNumber" class="name">
+                </div>
+                <div class="col-md-4">
+                    <label for="name">Bank Account:</label>
+                    <input type="text" id="bankAccount" class="name">
+                </div>
+                <div class="col-md-4">
+                    <label for="name">Bank IFCS Number:</label>
+                    <input type="text" id="bankifcs" class="name">
+                </div>
+                <div class="col-md-4">
+                    <label for="name">Select a Type:</label>
+                    <select id="type" class="name">
+                        <option value=""></option>
+                        <option>Cement</option>
+                        <option>Bricks</option>
+                        <option>Soil</option>
+                        <option>Steel</option>
+                        <option>Paint</option>
+                        <option>Wall putti</option>
+                        <option>Plumber</option>
+                        <option>Electrician</option>
+                    </select>
+                </div>
+                <div class="col-md-4">
+                    <label for="name">Company Address:</label>
+                    <textarea style="height: 120px;" id="companyAddress" class="name"></textarea>
+                </div>
+                <div class="col-md-4">
+                    <label for="state">Select your state:</label>
+                    <select id="state" class="name">
+                        <option value=""></option>
+                        <option>Karanataka</option>
+                        <option>Maharastra</option>
+                        <option>Tamil nadu</option>
+                        <option>Goa</option>
+                        <option>Rajastan</option>
+                        <option>Andra pradesh</option>
+                        <option>Kerla</option>
+                        <option>Gujrat</option>
+                    </select>
+                </div>
+            </div>
+            <div class="col-md-3 ">
+                <span style="color:red;" id="error"></span>
+                <br>
+                <button type="submit" class="buttons" id="save">Save</button>
+            </div>
+
+        </div>
+    </div>
+</body>
+</html>

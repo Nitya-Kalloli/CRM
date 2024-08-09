@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Customer form</title>
+    <link rel="stylesheet" href="customerstyle.css">
+</head>
+
+<body>
+    <h1 class="heading">Customer Entries</h1>
+
+    <div class="box">
+        <div class="mini-box">
+            <label for="input1">Name:</label>
+            <div class="custom-input">
+                <input type="text" id="input1" name="input1" placeholder="">
+            </div>
+        </div>
+        <div class="mini-box">
+            <label for="input2">Email:</label>
+            <div class="custom-input">
+                <input type="text" id="input2" name="input2" placeholder="">
+            </div>
+        </div>
+        <div class="mini-box">
+            <label for="input3">Phone-no:</label>
+            <div class="custom-input">
+                <input type="text" id="input3" name="input3" placeholder="">
+            </div>
+        </div>
+        <div class="mini-box">
+            <label for="input4">Aadhar card number:</label>
+            <div class="custom-input" style="margin-bottom: 20px;">
+                <input type="text" id="input4" name="input4" placeholder="">
+            </div>
+        </div>
+    </div>
+
+    <button type="button" onclick="saveForm()">Save</button>
+
+    <script>
+        function saveForm() {
+            alert('Saved successfully');
+            location.reload();
+        }
+    </script>
+</body>
+
+</html>

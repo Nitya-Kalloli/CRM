@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Customer form</title>
+</head>
+
+<body>
+    <h1>Customer Entries</h1>
+    <style>
+        body {
+            font-family: 'Times New Roman', Times, serif;
+            margin: 0;
+            padding: 0;
+            background-color: rgba(245, 245, 245, 0.243);
+        }
+
+        h1 {
+            text-align: center;
+            margin-top: 20px;
+            margin-left: 5px;
+        }
+
+        .box {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            justify-content: center;
+            padding: 20px;
+            background-color: #ffffff;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .mini-box {
+            width: 100%;
+            box-sizing: border-box;
+            margin-bottom: 15px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 5px;
+            font-size: 18px; /* Adjust the font-size as needed */
+        }
+
+        input {
+            width: calc(100% - 20px); /* Adjust the width as needed */
+            padding: 8px; /* Adjust the padding as needed */
+            box-sizing: border-box;
+            border: 1px solid #cccccc;
+            border-color: blue;
+            border-width: 2px;
+            border-radius: 8px; /* Adjust the border-radius as needed */
+            margin-bottom: 10px; /* Adjust the margin-bottom as needed */
+        }
+
+        @media screen and (max-width: 768px) {
+            .mini-box {
+                width: 100%;
+            }
+        }
+    </style>
+    <div class="box">
+        <div class="mini-box">
+            <label for="input1">Name:</label>
+            <input type="text" id="input1" name="input1" placeholder="">
+        </div>
+        <div class="mini-box">
+            <label for="input2">Email:</label>
+            <input type="text" id="input2" name="input2" placeholder="">
+        </div>
+        <div class="mini-box">
+            <label for="input3">Phone-no:</label>
+            <input type="text" id="input3" name="input3" placeholder="">
+        </div>
+        <div class="mini-box">
+            <label for="input4">Aadhar card number:</label>
+            <input type="text" id="input4" name="input4" placeholder="">
+        </div>
+    </div>
+
+    <script>
+        function submitForm() {
+            var name = document.getElementById('input1').value;
+            var email = document.getElementById('input2').value;
+            var phone = document.getElementById('input3').value;
+            var aadhar = document.getElementById('input4').value;
+
+            fetch('save_data.php', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/x-www-form-urlencoded',
+                },
+                body: 'input1=' + encodeURIComponent(name) +
+                    '&input2=' + encodeURIComponent(email) +
+                    '&input3=' + encodeURIComponent(phone) +
+                    '&input4=' + encodeURIComponent(aadhar),
+            })
+                .then(response => response.text())
+                .then(data => {
+                    alert(data);
+                })
+                .catch(error => {
+                    console.error('Error:', error);
+                });
+        }
+    </script>
+</body>
+
+</html>

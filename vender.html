@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        .heading {
+            text-align: center;
+            margin-top: 10px;
+            margin-bottom: 20px;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 10px;
+            background-color: rgb(212, 195, 195);
+            font-family: 'Times New Roman', Times, serif;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .customerTable {
+            border-collapse: collapse;
+            width: 100%;
+            margin-top: 20px;
+        }
+
+        .tableHeader {
+            border: 1px solid #000; /* Black border */
+            padding: 8px;
+            background-color: #f2f2f2;
+            text-align: left;
+        }
+
+        .tableData {
+            border: 1px solid #000; /* Black border */
+            padding: 8px;
+            text-align: left;
+        }
+
+        .srNo {
+            width: 50px;
+        }
+
+        .item {
+            width: 300px; 
+        }
+
+        .mrp {
+            width: 100px; 
+        }
+
+        .quantity {
+            width: 100px; 
+        }
+
+        .tax {
+            width: 100px; 
+        }
+
+        .amount {
+            width: 120px; 
+        }
+    </style>
+
+    <title>Customer Details</title>
+</head>
+
+<body>
+
+    <h1 class="heading">Selling Product Details</h1>
+    <div class="container">
+        <table class="customerTable">
+            <thead>
+                <tr>
+                    <th class="tableHeader srNo">Sr.no</th>
+                    <th class="tableHeader item">Item</th>
+                    <th class="tableHeader mrp">MRP</th>
+                    <th class="tableHeader quantity">Quantity</th>
+                    <th class="tableHeader tax">Tax (%)</th>
+                    <th class="tableHeader amount">Total Amount</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- Default Rows -->
+                <tr>
+                    <td class="tableData srNo">1</td>
+                    <td class="tableData item" contenteditable="true"></td>
+                    <td class="tableData mrp" contenteditable="true"></td>
+                    <td class="tableData quantity" contenteditable="true"></td>
+                    <td class="tableData tax" contenteditable="true"></td>
+                    <td class="tableData amount" contenteditable="true"></td>
+                </tr>
+                <tr>
+                    <td class="tableData srNo">2</td>
+                    <td class="tableData item" contenteditable="true"></td>
+                    <td class="tableData mrp" contenteditable="true"></td>
+                    <td class="tableData quantity" contenteditable="true"></td>
+                    <td class="tableData tax" contenteditable="true"></td>
+                    <td class="tableData amount" contenteditable="true"></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <script>
+        const table = document.getElementById('customerTable');
+
+        // Add event listener to the last row's cells
+        const lastRow = table.rows[table.rows.length - 1];
+        for (let i = 0; i < lastRow.cells.length; i++) {
+            lastRow.cells[i].addEventListener('keydown', function (event) {
+                // Check if the user pressed the "Enter" key
+                if (event.key === 'Enter') {
+                    addNewRow();
+                }
+            });
+        }
+
+        function addNewRow() {
+            const newRow = table.insertRow(table.rows.length);
+
+            // Increment the serial number
+            const serialNumber = table.rows.length;
+
+            // Add cells
+            for (let i = 0; i < table.rows[0].cells.length; i++) {
+                const cell = newRow.insertCell(i);
+
+                // Assign serial number to the first cell
+                if (i === 0) {
+                    cell.textContent = serialNumber;
+                    cell.classList.add("tableData", "srNo");
+                } else {
+                    cell.contentEditable = true;
+                    cell.classList.add("tableData");
+                }
+            }
+
+            // Focus on the first cell of the new row
+            newRow.cells[1].focus();
+        }
+    </script>
+
+</body

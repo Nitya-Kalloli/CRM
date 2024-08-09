@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        .heading {
+            text-align: center;
+            margin-top: 10px;
+            margin-bottom: 20px;
+        }
+
+        /* .container {
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        } */
+
+        /* .container {
+            font-family: 'Times New Roman', Times, serif;
+            margin: 0;
+            padding: 10px;
+            background-color: #ebdcdc;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            max-width: 800px;
+            justify-content: center;
+            align-items: center;
+        } */
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            /* Add this line to center the container horizontally */
+            padding: 10px;
+            background-color: #ebdcdc;
+            font-family: 'Times New Roman', Times, serif;
+        }
+
+        .label-group {
+            display: block;
+            margin-bottom: 5px;
+            margin-top: 5px;
+            font-weight: bold;
+            font-size: 18px;
+            height: 20px;
+        }
+
+        .row {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            justify-content: center;
+            padding: 8px;
+        }
+
+        .input-group {
+            width: 80%;
+            padding: 10px;
+            box-sizing: border-box;
+            border: 2px solid #007bff;
+            border-radius: 5px;
+            margin-bottom: 5px;
+        }
+
+        .col-md-4 {
+            width: calc(33.33% - 15px);
+            box-sizing: border-box;
+            padding: 15px;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .use-button {
+            background-color: #007bff;
+            border: none;
+            color: white;
+            padding: 15px 32px;
+            text-align: center;
+            text-decoration: solid;
+            display: inline-block;
+            font-size: 16px;
+            cursor: pointer;
+            border-radius: 8px;
+            margin-top: 10px;
+            /* width: 100%; */
+        }
+
+        .button-container {
+            text-align: right;
+        }
+
+        table {
+            border-collapse: collapse;
+            width: 100%;
+            margin-top: 20px;
+        }
+
+        th,
+        td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: left;
+        }
+
+        th {
+            background-color: #f2f2f2;
+        }
+
+        form {
+            margin-top: 20px;
+        }
+    </style>
+
+    <title>Customer Details</title>
+</head>
+
+<body>
+
+    <h1 class="heading">Customer Details</h1>
+    <!-- <div class="container">
+        <form id="customerForm">
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="form-group">
+                        <label class="label-group" for="name">Item:</label>
+                        <input class="input-group" type="text" id="name" name="name" placeholder="">
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="form-group">
+                        <label class="label-group" for="email">MRP</label>
+                        <input class="input-group" type="text" id="email" name="email" placeholder="">
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="form-group">
+                        <label class="label-group" for="phone">Quantity:</label>
+                        <input class="input-group" type="text" id="phone" name="phone" placeholder="">
+                    </div>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="form-group">
+                        <label class="label-group" for="item">Item:</label>
+                        <select class="input-group" id="item" name="item">
+                            <option value=""></option>
+                            <option value="Cement">Cement</option>
+                            <option value="Bricks">Bricks</option>
+                            <option value="Soil">Soil</option>
+                            <option value="Steel">Steel</option>
+                            <option value="Paint">Paint</option>
+                            <option value="WallPutty">Wall Putty</option>
+                            <option value="Plumber">Plumber</option>
+                            <option value="Electrician">Electrician</option>
+                        </select>
+                    </div>
+                </div>
+                
+                <div class="col-md-4">
+                    <div class="form-group">
+                        <label class="label-group" for="address">Price per unit:</label>
+                        <input class="input-group" type="text" id="aadhar" name="aadhar" placeholder="">
+                        
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="form-group">
+                        <label class="label-group" for="city">Tax (%):</label>
+                        <input class="input-group" type="text" id="city" name="city" placeholder="">
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="form-group">
+                        <label class="label-group" for="shipping-address">Total Amount:</label>
+                        <input class="input-group" type="text" id="city" name="city" placeholder="">
+
+    
+                    </div>
+                </div>
+            </div>
+
+            
+        </form> -->
+    <!-- </div> -->
+    <!-- <div class="button-container">
+    <button type="button" class="use-button" onclick="addCustomer()">Add Customer</button>
+</div> -->
+
+
+
+
+
+    <table id="customerTable">
+        <thead>
+            <tr>
+                <th>Sr.no</th>
+                <th>Item</th>
+                <th>MRP</th>
+                <th>Quantity</th>
+                <th>Tax (%)</th>
+                <th>Total Amount</th>
+            </tr>
+        </thead>
+        <tbody>
+            <!-- Customer details will be added dynamically using JavaScript -->
+        </tbody>
+    </table>
+
+    <script>
+        const customerData = [];
+
+        function addCustomer() {
+            const item = document.getElementById('item').value;
+            const mrp = parseFloat(document.getElementById('mrp').value);
+            const units = parseInt(document.getElementById('units').value);
+            const tax = parseInt(document.getElementById('tax').value);
+
+            if (item && !isNaN(mrp) && !isNaN(units) && !isNaN(tax)) {
+                const total = calculateTotal(mrp, units, tax);
+                const customer = { item, mrp, units, tax, total };
+                customerData.push(customer);
+
+                populateTable();
+                clearForm();
+            } else {
+                alert('Please enter valid details for the product.');
+            }
+        }
+
+        function calculateTotal(mrp, units, tax) {
+            const subtotal = mrp * units;
+            const taxAmount = (subtotal * tax) / 100;
+            const total = subtotal + taxAmount;
+            return total.toFixed(2);
+        }
+
+        function populateTable() {
+            const tableBody = document.querySelector('#customerTable tbody');
+            tableBody.innerHTML = '';
+
+            customerData.forEach(customer => {
+                const row = document.createElement('tr');
+                row.innerHTML = `
+          <td>${customer.item}</td>
+          <td>${customer.mrp}</td>
+          <td>${customer.units}</td>
+          <td>${customer.tax}%</td>
+          <td>${customer.total}</td>
+        `;
+                tableBody.appendChild(row);
+            });
+        }
+
+        function clearForm() {
+            document.getElementById('item').value = '';
+            document.getElementById('mrp').value = '';
+            document.getElementById('units').value = '';
+            document.getElementById('tax').value = '';
+        }
+    </script>
+
+</body>
+
+</html>

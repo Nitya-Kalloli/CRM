@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Customer form</title>
+    <link rel="stylesheet" href="customerstyle2.css">
+</head>
+
+<body>
+    <div class="container">
+        <h1 class="heading">Customer Entries</h1>
+
+        <div class="box">
+            <div class="row">
+                <div class="col-md-4">
+                    <!-- <div class="mini-box"> -->
+
+                        <label for="input1">Name:</label>
+                        <input class="custom-input" padding-left:20px ;" type="text" id="input1" name="input1" placeholder="">
+                    <!-- </div> -->
+                </div>
+
+                <div class="col-md-4">
+                    <!-- <div class="mini-box"> -->
+                        <label for="input2">Email:</label>
+                        <input style="padding-left:20px ;" type="text" id="input2" name="input2" placeholder="">
+                    <!-- </div> -->
+
+                </div>
+                <div class="col-md-4">
+                    <!-- <div class="mini-box"> -->
+                        <label for="input3">Phone-no:</label>
+                        <input style="padding-left:20px ;" type="text" id="input3" name="input3" placeholder="">
+                    <!-- </div> -->
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-4">
+                    <!-- <div class="mini-box"> -->
+                        <label for="input4">Aadhar card number:</label>
+                        <input style="padding-left: 20px;" type="text" id="input4" name="input4" placeholder="">
+                    <!-- </div> -->
+
+                </div>
+                <div class="col-md-4">
+
+                    <!-- <div class="mini-box"> -->
+                        <label for="input4">Adress:</label>
+                        <input style="padding-left: 20px;" type="text" id="input4" name="input4" placeholder="">
+                    <!-- </div> -->
+                </div>
+
+                <div class="col-md-4">
+                    <!-- <div class="mini-box"> -->
+                        <label for="input4">State:</label>
+                        <input style="padding-left: 20px;" type="text" id="input4" name="input4" placeholder="">
+                    <!-- </div> -->
+                </div>
+            </div>
+        </div>
+        <button type="button" onclick="saveForm()">Save</button>
+
+        <script>
+            function saveForm() {
+                alert('Saved successfully');
+                location.reload();
+            }
+        </script>
+    </div>
+</body>
+
+</html>

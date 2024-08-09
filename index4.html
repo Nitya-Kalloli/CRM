@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interviewer's Form</title>
+    <style>
+        .heading {
+            text-align: center;
+            margin-top: 10px;
+            margin-bottom: 20px;
+        }
+
+        .container {
+            font-family: 'Times New Roman', Times, serif;
+            margin: 0;
+            padding: 10px;
+            background-color: #ebdcdc;
+        }
+
+        .row {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            padding: 20px;
+        }
+
+        .col-md-4 {
+            width: calc(33.33% - 10px);
+            box-sizing: border-box;
+            padding: 15px;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .form-group {
+            margin-bottom: 10px;
+        }
+
+        .label-group {
+            display: block;
+            margin-bottom: 5px;
+            margin-top: 5px;
+            font-weight: bold;
+            font-size: 18px;
+            height: 20px;
+        }
+
+        .input-group,
+        .textarea-group,
+        .select-group {
+            width: 100%;
+            padding: 10px;
+            box-sizing: border-box;
+            border: 2px solid #007bff;
+            border-radius: 5px;
+            margin-bottom: 5px;
+        }
+
+        .textarea-group {
+            height: 80px;
+            resize: none;
+        }
+
+        .use-button {
+            background-color: #007bff;
+            border: none;
+            color: white;
+            padding: 15px 32px;
+            text-align: center;
+            text-decoration: solid;
+            display: inline-block;
+            font-size: 16px;
+            cursor: pointer;
+            border-radius: 8px;
+            margin-top: 10px;
+            /* width: 100%; */
+        }
+
+        .button-container {
+            text-align: right;
+        }
+
+        /* Media Queries */
+        @media only screen and (max-width: 768px) {
+            .col-md-4 {
+                width: 100%;
+                margin-bottom: 15px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <h1 class="heading">Customer Entries</h1>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-4">
+                <div class="form-group">
+                    <label class="label-group" for="name">Name:</label>
+                    <input class="input-group" type="text" id="name" name="name" placeholder="">
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="form-group">
+                    <label class="label-group" for="email">E-mail:</label>
+                    <input class="input-group" type="text" id="email" name="email" placeholder="">
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="form-group">
+                    <label class="label-group" for="phone">Phone-no:</label>
+                    <input class="input-group" type="text" id="phone" name="phone" placeholder="">
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-4">
+                <div class="form-group">
+                    <label class="label-group" for="aadhar">Aadhar-card-no:</label>
+                    <input class="input-group" type="text" id="aadhar" name="aadhar" placeholder="">
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="form-group">
+                    <label class="label-group" for="address">Select Your State:</label>
+                    <select class="select-group" id="state" name="state">
+                        <option value="" selected disabled></option>
+                    </select>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="form-group">
+                    <label class="label-group" for="city">Enter your city:</label>
+                    <input class="input-group" type="text" id="city" name="city" placeholder="">
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-4">
+                <div class="form-group">
+                    <label class="label-group" for="shipping-address">Shipping Address:</label>
+                    <textarea class="textarea-group" id="shipping-address" name="shipping-address"
+                        placeholder=""></textarea>
+
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="button-container">
+        <button type="button" class="use-button" onclick="saveForm()">Save</button>
+    </div>
+
+    <script>
+        function saveForm() {
+            alert('Form saved successfully!');
+            resetForm();
+        }
+
+        function resetForm() {
+            document.getElementById('name').value = '';
+            document.getElementById('email').value = '';
+            document.getElementById('phone').value = '';
+            document.getElementById('aadhar').value = '';
+            document.getElementById('state').value = '';
+            document.getElementById('city').value = '';
+            document.getElementById('shipping-address').value = '';
+        }
+
+        document.addEventListener('DOMContentLoaded', function () {
+            var stateSelect = document.getElementById('state');
+            var states = [
+                "Andhra Pradesh",
+                "Arunachal Pradesh",
+                "Assam",
+                "Bihar",
+                "Chhattisgarh",
+                "Goa",
+                "Gujarat",
+                "Haryana",
+                "Himachal Pradesh",
+                "Jharkhand",
+                "Karnataka",
+                "Kerala",
+                "Madhya Pradesh",
+                "Maharashtra",
+                "Manipur",
+                "Meghalaya",
+                "Mizoram",
+                "Nagaland",
+                "Odisha",
+                "Punjab",
+                "Rajasthan",
+                "Sikkim",
+                "Tamil Nadu",
+                "Telangana",
+                "Tripura",
+                "Uttar Pradesh",
+                "Uttarakhand",
+                "West Bengal"
+            ];
+
+            states.sort();
+
+            states.forEach(function (state) {
+                var option = document.createElement('option');
+                option.value = state;
+                option.text = state;
+                stateSelect.appendChild(option);
+            });
+        });
+    </script>
+</body>
+
+</html>

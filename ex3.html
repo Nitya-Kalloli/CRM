@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        .container {
+    max-width: 800px;
+    margin: 20px auto;
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+        table {
+            border-collapse: collapse;
+            width: 80%;
+            margin: 20px auto;
+        }
+
+        th,
+        td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: left;
+        }
+
+        th {
+            background-color: #f2f2f2;
+        }
+
+        #addRowBtn {
+            display: block;
+            margin: 10px auto;
+            padding: 8px 16px;
+            background-color: #4caf50;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+    </style>
+
+    <title>Table Form</title>
+</head>
+
+<body>
+    <div class="container">
+        <table id="dataTable">
+            <thead>
+                <tr>
+                    <th>Sr.no</th>
+                    <th>Item</th>
+                    <th>MRP</th>
+                    <th>Quantity</th>
+                    <!-- <th>Price</th> -->
+                    <th>Tax</th>
+                    <th>Total Amount</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- Default Rows -->
+                <tr>
+                    <td>1</td>
+                    <td contenteditable="true"></td>
+                    <td contenteditable="true"></td>
+                    <td contenteditable="true"></td>
+                    <!-- <td contenteditable="true"></td> -->
+                    <td contenteditable="true"></td>
+                    <td contenteditable="true"></td>
+                </tr>
+                <tr>
+                    <td>2</td>
+                    <td contenteditable="true"></td>
+                    <td contenteditable="true"></td>
+                    <td contenteditable="true"></td>
+                    <!-- <td contenteditable="true"></td> -->
+                    <td contenteditable="true"></td>
+                    <td contenteditable="true"></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <button id="addRowBtn" onclick="addRow()">Add Row</button>
+
+    <script>
+        function addRow() {
+            const table = document.getElementById('dataTable');
+            const newRow = table.insertRow(table.rows.length);
+            const cellCount = table.rows[0].cells.length;
+
+            for (let i = 0; i < cellCount; i++) {
+                const cell = newRow.insertCell(i);
+                const editable = document.createElement('div');
+                editable.contentEditable = true;
+                cell.appendChild(editable);
+            }
+
+            // Update Sr.no
+            updateSrNos();
+        }
+
+        function updateSrNos() {
+            const table = document.getElementById('dataTable');
+            const rows = table.getElementsByTagName('tr');
+
+            for (let i = 1; i < rows.length; i++) {
+                rows[i].cells[0].innerText = i + 1;
+            }
+        }
+        function updateTotal(cell) {
+            const row = cell.parentNode;
+            const quantity = parseFloat(row.cells[3].innerText) || 0;
+            const price = parseFloat(row.cells[4].innerText) || 0;
+            const tax = parseFloat(row.cells[5].innerText) || 0;
+
+            const totalAmount = (quantity * price) + ((quantity * price * tax) / 100);
+            row.cells[6].innerText = totalAmount.toFixed(2);
+        }
+    </script>
+
+</body>
+
+</html>
